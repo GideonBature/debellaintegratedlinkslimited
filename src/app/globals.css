@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #13152b;
+  --color-night: #0b0d1c;
+  --color-teal: #0997b2;
+  --color-teal-deep: #067489;
+  --color-aqua: #5fd3e6;
+  --color-concrete: #f2f0ea;
+  --color-sand: #e7e3d8;
+  --color-hazard: #f5b335;
+  --font-display: var(--font-barlow), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex), ui-monospace, monospace;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body { background: var(--color-concrete); color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, .font-display { font-family: var(--font-display); letter-spacing: -0.005em; }
+.mono { font-family: var(--font-mono); }
+
+/* survey grid */
+.grid-light { background-image: linear-gradient(rgba(19,21,43,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(19,21,43,.07) 1px, transparent 1px); background-size: 56px 56px; }
+.grid-dark { background-image: linear-gradient(rgba(95,211,230,.09) 1px, transparent 1px), linear-gradient(90deg, rgba(95,211,230,.09) 1px, transparent 1px); background-size: 56px 56px; }
+
+/* letterhead corner tab */
+.tab-corner { border-bottom-right-radius: 28px; }
+
+.draw path, .draw line, .draw rect, .draw polyline { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.4s cubic-bezier(.6,.05,.2,1) forwards; }
+.draw > *:nth-child(2) { animation-delay: .15s } .draw > *:nth-child(3) { animation-delay: .3s }
+.draw > *:nth-child(4) { animation-delay: .45s } .draw > *:nth-child(5) { animation-delay: .6s }
+.draw > *:nth-child(6) { animation-delay: .75s } .draw > *:nth-child(7) { animation-delay: .9s }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+
+@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee { animation: marquee 45s linear infinite; }
+.marquee-wrap:hover .marquee { animation-play-state: paused; }
+
+.hazard { background: repeating-linear-gradient(-45deg, var(--color-hazard) 0 14px, var(--color-ink) 14px 28px); }
+
+:focus-visible { outline: 3px solid var(--color-hazard); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee { animation: none; }
+  .draw path, .draw line, .draw rect, .draw polyline { animation: none; stroke-dashoffset: 0; }
+  html { scroll-behavior: auto; }
+}
