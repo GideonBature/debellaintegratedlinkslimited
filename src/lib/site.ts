@@ -67,12 +67,13 @@ export const fleet = [
 ];
 
 export const credentials = [
-  { k: "CAC", t: "Incorporated", d: "Private company limited by shares, RC 7137689 — 13 September 2023" },
-  { k: "FIRS", t: "Tax Clearance", d: "Tax Clearance Certificate valid to 31 December 2026" },
-  { k: "PENCOM", t: "Pension compliant", d: "Pension Clearance Certificate valid to 31 December 2026" },
-  { k: "NSITF", t: "Employees' Compensation", d: "ECS Clearance Certificate valid to 31 December 2026" },
-  { k: "ITF", t: "Training Fund", d: "Industrial Training Fund compliance for 2025" },
-  { k: "SCUML", t: "Registered", d: "Special Control Unit against Money Laundering" },
+  { k: "CAC", t: "Incorporated" },
+  { k: "BPP", t: "Registered contractor" },
+  { k: "FIRS", t: "Tax clearance" },
+  { k: "PENCOM", t: "Pension compliant" },
+  { k: "NSITF", t: "Employees' compensation" },
+  { k: "ITF", t: "Training fund" },
+  { k: "SCUML", t: "Registered" },
 ];
 
 export const offices = [

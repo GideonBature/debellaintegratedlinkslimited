@@ -336,12 +336,11 @@ function Standards() {
           <motion.div {...reveal}>
             <Sheet n="06" label="Compliance" />
             <h2 className="mt-5 text-5xl font-extrabold uppercase leading-[0.95] sm:text-6xl">Registered. Cleared. Accountable.</h2>
-            <div className="mt-9 grid border-2 border-ink sm:grid-cols-2">
+            <div className="mt-9 grid gap-0.5 border-2 border-ink bg-ink sm:grid-cols-2">
               {credentials.map((c, i) => (
-                <div key={c.k} className={`p-5 ${i % 2 === 0 ? "sm:border-r-2" : ""} ${i < credentials.length - 2 ? "border-b-2" : i === credentials.length - 2 ? "border-b-2 sm:border-b-0" : ""} border-ink`}>
+                <div key={c.k} className={`bg-concrete p-5 ${i === credentials.length - 1 && credentials.length % 2 === 1 ? "sm:col-span-2" : ""}`}>
                   <div className="font-display text-3xl font-bold text-teal-deep">{c.k}</div>
                   <div className="mt-1 text-sm font-bold uppercase tracking-wide">{c.t}</div>
-                  <p className="mt-1 text-sm leading-snug text-ink/65">{c.d}</p>
                 </div>
               ))}
             </div>
